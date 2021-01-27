@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>大事件-登录/注册</title>
+  <!-- 导入layui样式表 -->
+  <link rel="stylesheet" href="./assets/lib/layui/css/layui.css">
+  <!-- 导入自己的样式表 -->
+  <link rel="stylesheet" href="./assets/css/login.css">
+</head>
+
+<body>
+  <!-- 头部logo区域 -->
+  <div class="layui-main">
+    <img src="./assets/images/logo.png" alt="">
+  </div>
+  <!-- 登录注册区域 -->
+  <div class="loginAndRegBox">
+    <div class="title-box"></div>
+    <!-- 登录的div -->
+    <div class="login-box">
+      <!-- 登录的表单 -->
+      <form class="layui-form" id="form_login">
+        <!-- 用户名 -->
+        <div class="layui-form-item">
+          <i class="layui-icon layui-icon-username"></i>
+          <!-- lay-verify="required" 表示这是一个必填项，layui规定的，想要生效必须引入layui.js文件 -->
+         <!-- 有多个规则中间用|，而且不能有空格 -->
+          <input type="text" name="username" required lay-verify="required" placeholder="请输入用户名" autocomplete="off"
+            class="layui-input">
+        </div>
+        <!-- 密码框 -->
+        <div class="layui-form-item">
+          <i class="layui-icon layui-icon-password"></i>
+          <input type="password" name="password" required lay-verify="required| pwd" placeholder="请输入密码" autocomplete="off"
+            class="layui-input">
+        </div>
+        <div class="layui-form-item">
+          <!-- 有lay-submit这个属性是提交按钮，这是它和普通a按钮的区别 -->
+          <button class="layui-btn layui-btn-fluid layui-btn-normal" lay-submit>登录</button>
+        </div>
+        <div class="layui-form-item links">
+          <!-- 阻止a链接的跳转 -->
+          <a href="javascript:;" id="link_reg">去注册账号</a>
+        </div>
+      </form>
+    </div>
+    <!-- 注册的div -->
+    <div class="reg-box">
+      <!-- 注册的表单 -->
+      <form class="layui-form" id="form_reg">
+        <!-- 用户名 -->
+        <div class="layui-form-item">
+          <i class="layui-icon layui-icon-username"></i>
+          <input type="text" name="username" required lay-verify="required" placeholder="请输入用户名" autocomplete="off"
+            class="layui-input">
+        </div>
+        <!-- 密码框 -->
+        <div class="layui-form-item">
+          <i class="layui-icon layui-icon-password"></i>
+          <input type="password" name="password" required lay-verify="required|pwd" placeholder="请输入密码" autocomplete="off"
+            class="layui-input" class="pwdddd">
+        </div>
+        <div class="layui-form-item">
+          <i class="layui-icon layui-icon-password"></i>
+          <input type="password" name="repassword" required lay-verify="required|pwd|repwd" placeholder="请确认密码" autocomplete="off"
+            class="layui-input">
+        </div>
+
+        <div class="layui-form-item">
+          <!-- 有lay-submit这个属性是提交按钮，这是它和普通a按钮的区别 -->
+          <button class="layui-btn layui-btn-fluid layui-btn-normal" lay-submit>注册</button>
+        </div>
+        <div class="layui-form-item links">
+          <!-- 阻止a链接的跳转 -->
+          <a href="javascript:;" id="link_login">去登录</a>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- 导入layui.js文件,下面自己写的longin.js也要运用这个文件里内容，所以他要在login.js之前引用 -->
+  <script src="./assets/lib/layui/layui.all.js"></script>
+  <script src="./assets/lib/jquery.js"></script>
+  <!-- 它依赖于jQuery，我们登录的js又用到它，所以放在这个位置 -->
+  <script src="./assets/js/baseAPI.js"></script>
+  <!-- 导入自己写的js -->
+  <script src="./assets/js/login.js"></script>
+</body>
+
+</html>
