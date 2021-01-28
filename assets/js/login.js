@@ -24,6 +24,7 @@ form.verify({
 //通过形参value是确认密码框的内容
 // 还需要拿到密码框中内容，两者进行比较
 // 运用jQuery里面的属性选择器，拿到确认密码框里面输入的内容,也可以给密码框起个id
+//属性选择器，选择类名为reg-box元素， 包裹的name属性为password的元素 
 var pwd = $('.reg-box [name=password]').val()
 if (pwd !== value) {
   return '两次密码不一致'
@@ -66,7 +67,6 @@ $("#form_login").submit(function(e) {
       localStorage.setItem('token',res.token)
       //  登陆成功以后要跳转到后台主页
       location.href = '/xwx/idx.html'
-      // location.href = '../../idx.html'
      }
   })
 })
