@@ -1,5 +1,5 @@
 // jquery在发起ajax，get,post请求时都会先调用ajaxPrefilter这个函数
-// 在这个函数中可以拿到ajax提供的配置对象
+// 在这个函数中可以拿到ajax提供的配置对象(options)
 $.ajaxPrefilter(function(options) {
     // 得到的是不包括根路径的接口地址
 // console.log(options.url);

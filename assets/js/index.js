@@ -27,6 +27,7 @@ function getUserInfo() {
         //     Authorization: localStorage.getItem('token') || ''
         // },
         success:function(res){
+            // 用户直接在地址栏输入后台地址，status等于1，message是身份认证失败
             // console.log(res);
            if (res.status !== 0) {
             //调用layui的弹出框
